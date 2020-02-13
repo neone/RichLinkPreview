@@ -10,6 +10,7 @@ import android.widget.Toast;
 import io.github.ponnamkarthik.richlinkpreview.MetaData;
 import io.github.ponnamkarthik.richlinkpreview.RichLinkListener;
 import io.github.ponnamkarthik.richlinkpreview.RichLinkView;
+import io.github.ponnamkarthik.richlinkpreview.RichLinkViewNeone;
 import io.github.ponnamkarthik.richlinkpreview.RichLinkViewSkype;
 import io.github.ponnamkarthik.richlinkpreview.RichLinkViewTelegram;
 import io.github.ponnamkarthik.richlinkpreview.RichLinkViewTwitter;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RichLinkViewTelegram richLinkView1;
     RichLinkViewSkype richLinkView2;
     RichLinkViewTwitter richLinkView3;
+    RichLinkViewNeone richLinkView4;
 
     Button goToList;
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         richLinkView1 = (RichLinkViewTelegram) findViewById(R.id.richLinkView1);
         richLinkView2 = (RichLinkViewSkype) findViewById(R.id.richLinkView2);
         richLinkView3 = (RichLinkViewTwitter) findViewById(R.id.richLinkView3);
+        richLinkView4 = (RichLinkViewNeone) findViewById(R.id.richLinkView4);
 
         goToList = (Button) findViewById(R.id.go_to_list);
 
@@ -80,7 +83,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        richLinkView4.setLink("https://neone.com" ,new ViewListener() {
+            @Override
+            public void onSuccess(boolean status) {
 
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
 
         //custom clickListener
         richLinkView.setDefaultClickListener(false);

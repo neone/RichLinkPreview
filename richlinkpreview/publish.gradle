@@ -1,7 +1,7 @@
 apply plugin: 'com.jfrog.bintray'
 
 group 'com.neone.android'
-version '1.0.0'
+version '1.0.2'
 
 project.ext {
     mavGitUrl = 'https://github.com/neone/RichLinkPreview.git'

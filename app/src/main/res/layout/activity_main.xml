@@ -48,6 +48,14 @@
 
             </io.github.ponnamkarthik.richlinkpreview.RichLinkViewTwitter>
 
+            <io.github.ponnamkarthik.richlinkpreview.RichLinkViewNeone
+                android:layout_marginTop="16dp"
+                android:id="@+id/richLinkView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </io.github.ponnamkarthik.richlinkpreview.RichLinkViewNeone>
+
             <Button
                 android:id="@+id/go_to_list"
                 android:layout_gravity="center"
