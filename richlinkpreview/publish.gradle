@@ -1,0 +1,40 @@
+apply plugin: 'com.jfrog.bintray'
+
+group 'com.neone.android'
+version '1.0.0'
+
+project.ext {
+    mavGitUrl = 'https://github.com/neone/RichLinkPreview.git'
+    mavProjectName = 'RichLinkPreview'
+    mavLibraryLicenses = ["Apache-2.0":'https://www.apache.org/licenses/LICENSE-2.0.html']
+    mavLibraryDescription = "Rich link previews dynamically generated."
+    mavPublishToMavenLocal = true
+    mavSiteUrl = 'https://github.com/neone/RichLinkPreview'
+}
+
+def properties = new Properties()
+properties.load(new FileInputStream("local.properties"))
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    publications = ['Production']
+    configurations = ['archives']
+    override = true
+    pkg {
+        repo = 'NDRichLinkPreview'
+        name = 'richlinkpreview'
+        description = "Rich link previews dynamically generated."
+        publicDownloadNumbers = true
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/neone/RichLinkPreview'
+        version {
+            name = this.version
+            desc = "Version ${this.version}"
+            released = new Date()
+            vcsTag = this.version
+        }
+    }
+}
+
+apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
